@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "me.cyanhana.amethyst_tech.mixin",
+  "mixins": [
+    "EnchantmentHelperMixin"
+  ],
+  "client": [],
+  "server": [],
+  "compatibilityLevel": "JAVA_21",
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
