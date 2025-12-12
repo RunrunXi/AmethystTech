@@ -4,16 +4,13 @@ import me.cyanhana.amethyst_tech.hooks.IntrinsicEnchantItem;
 import me.cyanhana.amethyst_tech.util.ModToolTiers;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.PickaxeItem;
-import net.minecraft.world.item.SwordItem;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 
 import java.util.List;
 
-public class AmethystHoeItem extends PickaxeItem implements IntrinsicEnchantItem {
+public class AmethystHoeItem extends HoeItem implements IntrinsicEnchantItem {
     private final IntrinsicEnchantment intrinsicEnchantment = new IntrinsicEnchantment(Enchantments.FORTUNE, 1);
 
     public AmethystHoeItem() {

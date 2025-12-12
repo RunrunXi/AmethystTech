@@ -13,7 +13,7 @@ import net.minecraft.world.item.enchantment.Enchantments;
 
 import java.util.List;
 
-public class AmethystSwordItem extends PickaxeItem implements IntrinsicEnchantItem {
+public class AmethystSwordItem extends SwordItem implements IntrinsicEnchantItem {
     private final IntrinsicEnchantment intrinsicEnchantment = new IntrinsicEnchantment(Enchantments.LOOTING, 1);
 
     public AmethystSwordItem() {

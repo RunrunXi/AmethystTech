@@ -13,7 +13,7 @@ import net.minecraft.world.item.enchantment.Enchantments;
 
 import java.util.List;
 
-public class EchoSwordItem extends PickaxeItem implements IntrinsicEnchantItem {
+public class EchoSwordItem extends SwordItem implements IntrinsicEnchantItem {
     private final IntrinsicEnchantment intrinsicEnchantment = new IntrinsicEnchantment(Enchantments.SHARPNESS, 1);
 
     public EchoSwordItem() {
