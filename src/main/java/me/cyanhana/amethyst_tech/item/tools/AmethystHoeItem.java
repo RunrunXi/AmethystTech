@@ -15,7 +15,7 @@ public class AmethystHoeItem extends HoeItem implements IntrinsicEnchantItem {
 
     public AmethystHoeItem() {
         super(ModToolTiers.AMETHYST, new Properties()
-                .attributes(SwordItem.createAttributes(ModToolTiers.AMETHYST, -2.0F, -1.0F)));
+                .attributes(HoeItem.createAttributes(ModToolTiers.AMETHYST, -2.0F, -1.0F)));
     }
 
     @Override

@@ -15,7 +15,7 @@ public class AmethystAxeItem extends AxeItem implements IntrinsicEnchantItem {
 
     public AmethystAxeItem() {
         super(ModToolTiers.AMETHYST, new Properties()
-                .attributes(SwordItem.createAttributes(ModToolTiers.AMETHYST, 6.0F, -3.1F)));
+                .attributes(AxeItem.createAttributes(ModToolTiers.AMETHYST, 6.0F, -3.1F)));
     }
 
     @Override

@@ -15,7 +15,7 @@ public class AmethystShovelItem extends ShovelItem implements IntrinsicEnchantIt
 
     public AmethystShovelItem() {
         super(ModToolTiers.AMETHYST, new Properties()
-                .attributes(SwordItem.createAttributes(ModToolTiers.AMETHYST, 1.5F, -3.0F)));
+                .attributes(ShovelItem.createAttributes(ModToolTiers.AMETHYST, 1.5F, -3.0F)));
     }
 
     @Override

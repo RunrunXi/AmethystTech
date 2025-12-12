@@ -15,7 +15,7 @@ public class AmethystPickaxeItem extends PickaxeItem implements IntrinsicEnchant
 
     public AmethystPickaxeItem() {
         super(ModToolTiers.AMETHYST, new Item.Properties()
-                .attributes(SwordItem.createAttributes(ModToolTiers.AMETHYST, 3, -2.4F)));
+                .attributes(PickaxeItem.createAttributes(ModToolTiers.AMETHYST, 3, -2.4F)));
     }
 
     @Override

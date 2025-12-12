@@ -18,7 +18,7 @@ public class EchoPickaxeItem extends PickaxeItem implements IntrinsicEnchantItem
 
     public EchoPickaxeItem() {
         super(ModToolTiers.ECHO, new Properties()
-                .attributes(SwordItem.createAttributes(ModToolTiers.ECHO, 3, -2.4F)));
+                .attributes(PickaxeItem.createAttributes(ModToolTiers.ECHO, 3, -2.4F)));
     }
 
     @Override

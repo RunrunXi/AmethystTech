@@ -15,7 +15,7 @@ public class EchoHoeItem extends HoeItem implements IntrinsicEnchantItem {
 
     public EchoHoeItem() {
         super(ModToolTiers.ECHO, new Properties()
-                .attributes(SwordItem.createAttributes(ModToolTiers.ECHO, -2.0F, -1.0F)));
+                .attributes(HoeItem.createAttributes(ModToolTiers.ECHO, -2.0F, -1.0F)));
     }
 
     @Override

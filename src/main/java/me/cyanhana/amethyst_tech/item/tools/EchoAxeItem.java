@@ -15,7 +15,7 @@ public class EchoAxeItem extends AxeItem implements IntrinsicEnchantItem {
 
     public EchoAxeItem() {
         super(ModToolTiers.ECHO, new Properties()
-                .attributes(SwordItem.createAttributes(ModToolTiers.ECHO, 6.0F, -3.1F)));
+                .attributes(AxeItem.createAttributes(ModToolTiers.ECHO, 6.0F, -3.1F)));
     }
 
     @Override

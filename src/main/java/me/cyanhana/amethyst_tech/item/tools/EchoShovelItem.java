@@ -15,7 +15,7 @@ public class EchoShovelItem extends ShovelItem implements IntrinsicEnchantItem {
 
     public EchoShovelItem() {
         super(ModToolTiers.ECHO, new Properties()
-                .attributes(SwordItem.createAttributes(ModToolTiers.ECHO, 1.5F, -3.0F)));
+                .attributes(ShovelItem.createAttributes(ModToolTiers.ECHO, 1.5F, -3.0F)));
     }
 
     @Override
