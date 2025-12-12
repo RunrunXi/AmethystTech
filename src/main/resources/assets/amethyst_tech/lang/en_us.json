@@ -1,5 +1,21 @@
 {
-  "itemGroup.amethyst_tech": "Example Mod Tab",
-  "block.amethyst_tech.example_block": "Example Block",
-  "item.amethyst_tech.example_item": "Example Item"
+  "creativetab.amethyst_tech.title": "Amethyst Tech",
+  "item.amethyst_tech.amethyst_sword": "Amethyst Sword",
+  "item.amethyst_tech.amethyst_shovel": "Amethyst Shovel",
+  "item.amethyst_tech.amethyst_pickaxe": "Amethyst Pickaxe",
+  "item.amethyst_tech.amethyst_axe": "Amethyst Axe",
+  "item.amethyst_tech.amethyst_hoe": "Amethyst Hoe",
+  "item.amethyst_tech.echo_sword": "Echo Sword",
+  "item.amethyst_tech.echo_shovel": "Echo Shovel",
+  "item.amethyst_tech.echo_pickaxe": "Echo Pickaxe",
+  "item.amethyst_tech.echo_axe": "Echo Axe",
+  "item.amethyst_tech.echo_hoe": "Echo Hoe",
+  "item.amethyst_tech.echo_upgrade_smithing_template": "Smithing Template",
+  "item.amethyst_tech.smithing_template.echo_upgrade.applies_to": "Amethyst Weapon or Tools",
+  "item.amethyst_tech.smithing_template.echo_upgrade.ingredients": "Echo Block",
+  "upgrade.amethyst_tech.echo_upgrade": "Echo Upgrade",
+  "item.amethyst_tech.smithing_template.echo_upgrade.base_slot_description": "Add amethyst weapon or tool",
+  "item.amethyst_tech.smithing_template.echo_upgrade.additions_slot_description": "Add echo block",
+  "block.amethyst_tech.echo_block": "Echo Block",
+  "gui.amethyst_tech.enchantment_tooltip": "Stackable"
 }

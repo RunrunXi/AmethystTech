@@ -1,0 +1,21 @@
+{
+  "creativetab.amethyst_tech.title": "紫晶科技",
+  "item.amethyst_tech.amethyst_sword": "紫晶剑",
+  "item.amethyst_tech.amethyst_shovel": "紫晶锹",
+  "item.amethyst_tech.amethyst_pickaxe": "紫晶镐",
+  "item.amethyst_tech.amethyst_axe": "紫晶斧",
+  "item.amethyst_tech.amethyst_hoe": "紫晶锄",
+  "item.amethyst_tech.echo_sword": "回响剑",
+  "item.amethyst_tech.echo_shovel": "回响锹",
+  "item.amethyst_tech.echo_pickaxe": "回响镐",
+  "item.amethyst_tech.echo_axe": "回响斧",
+  "item.amethyst_tech.echo_hoe": "回响锄",
+  "item.amethyst_tech.echo_upgrade_smithing_template": "锻造模板",
+  "item.amethyst_tech.smithing_template.echo_upgrade.applies_to": "紫晶武器或工具",
+  "item.amethyst_tech.smithing_template.echo_upgrade.ingredients": "回响块",
+  "upgrade.amethyst_tech.echo_upgrade": "回响升级",
+  "item.amethyst_tech.smithing_template.echo_upgrade.base_slot_description": "放入紫晶武器或工具",
+  "item.amethyst_tech.smithing_template.echo_upgrade.additions_slot_description": "放入回响块",
+  "block.amethyst_tech.echo_block": "回响块",
+  "gui.amethyst_tech.enchantment_tooltip": "叠加"
+}
