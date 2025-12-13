@@ -27,12 +27,15 @@ public class ModItems {
     public static final DeferredItem<Item> AMETHYST_PICKAXE = ITEMS.register("amethyst_pickaxe", AmethystPickaxeItem::new);
     public static final DeferredItem<Item> AMETHYST_AXE = ITEMS.register("amethyst_axe", AmethystAxeItem::new);
     public static final DeferredItem<Item> AMETHYST_HOE = ITEMS.register("amethyst_hoe", AmethystHoeItem::new);
+    // 切割刀
+    public static final DeferredItem<Item> AMETHYST_CUTTING_KNIFE = ITEMS.register("amethyst_cutting_knife", AmethystCuttingKnifeItem::new);
     // 回响工具
     public static final DeferredItem<Item> ECHO_SWORD = ITEMS.register("echo_sword", EchoSwordItem::new);
     public static final DeferredItem<Item> ECHO_SHOVEL = ITEMS.register("echo_shovel", EchoShovelItem::new);
     public static final DeferredItem<Item> ECHO_PICKAXE = ITEMS.register("echo_pickaxe", EchoPickaxeItem::new);
     public static final DeferredItem<Item> ECHO_AXE = ITEMS.register("echo_axe", EchoAxeItem::new);
     public static final DeferredItem<Item> ECHO_HOE = ITEMS.register("echo_hoe", EchoHoeItem::new);
+
     // 注册到总线
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

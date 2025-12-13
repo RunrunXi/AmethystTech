@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.Block;
 
 public class ModTags {
     public class Items {
-
+        public static final TagKey<Item> CUTTING_KNIVES = createTagKey("cutting_knives");
 
         private static TagKey<Item> createTagKey(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(AmethystTech.MODID, name));

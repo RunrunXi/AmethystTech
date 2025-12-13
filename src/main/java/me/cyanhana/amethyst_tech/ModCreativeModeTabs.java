@@ -43,6 +43,8 @@ public class ModCreativeModeTabs {
         output.accept(ModItems.ECHO_HOE);
         // 锻造模板
         output.accept(ModItems.ECHO_UPGRADE_SMITHING_TEMPLATE);
+        // 切割刀
+        output.accept(ModItems.AMETHYST_CUTTING_KNIFE);
     }
     // 添加创造模式标签页的方块
     private static void addBlocksToTab(CreativeModeTab.Output output) {

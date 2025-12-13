@@ -27,5 +27,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.ECHO_PICKAXE.get());
         basicItem(ModItems.ECHO_AXE.get());
         basicItem(ModItems.ECHO_HOE.get());
+        // 切割刀
+        basicItem(ModItems.AMETHYST_CUTTING_KNIFE.get());
     }
 }
