@@ -2,7 +2,6 @@ package me.cyanhana.amethyst_tech.item;
 
 import me.cyanhana.amethyst_tech.AmethystTech;
 import me.cyanhana.amethyst_tech.item.tools.*;
-import me.cyanhana.amethyst_tech.util.ModToolTiers;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
