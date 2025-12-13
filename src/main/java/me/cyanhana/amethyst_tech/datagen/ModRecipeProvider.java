@@ -3,6 +3,8 @@ package me.cyanhana.amethyst_tech.datagen;
 import me.cyanhana.amethyst_tech.AmethystTech;
 import me.cyanhana.amethyst_tech.block.ModBlocks;
 import me.cyanhana.amethyst_tech.item.ModItems;
+import me.cyanhana.amethyst_tech.recipes.cutting.CuttingRecipeBuilder;
+import me.cyanhana.amethyst_tech.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -10,6 +12,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 
 import java.util.concurrent.CompletableFuture;
@@ -78,12 +81,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     // 切割配方
     private void registerCuttingRecipe(RecipeOutput recipeOutput) {
-        // 示例配方
-//        CuttingRecipeBuilder.cutting(RecipeCategory.MISC, Items.ECHO_SHARD, 1)
-//                .requires(ModTags.Items.CUTTING_KNIVES)
-//                .requires(Blocks.AMETHYST_BLOCK)
-//                .unlockedBy("has_amethyst_cutting_knife", has(ModItems.AMETHYST_CUTTING_KNIFE))
-//                .save(recipeOutput, AmethystTech.MODID + ":" + "echo_shard_from_block_cutting");
+        CuttingRecipeBuilder.cutting(RecipeCategory.MISC, ModItems.IRON_PLATE, 9)
+                .requires(ModTags.Items.CUTTING_KNIVES)
+                .requires(Blocks.IRON_BLOCK)
+                .unlockedBy("has_cutting_knife", has(ModTags.Items.CUTTING_KNIVES))
+                .save(recipeOutput, AmethystTech.MODID + ":" + "iron_plate_from_block");
+        CuttingRecipeBuilder.cutting(RecipeCategory.MISC, ModItems.COPPER_PLATE, 9)
+                .requires(ModTags.Items.CUTTING_KNIVES)
+                .requires(Blocks.COPPER_BLOCK)
+                .unlockedBy("has_cutting_knife", has(ModTags.Items.CUTTING_KNIVES))
+                .save(recipeOutput, AmethystTech.MODID + ":" + "copper_plate_from_block");
+        CuttingRecipeBuilder.cutting(RecipeCategory.MISC, ModItems.GOLD_PLATE, 9)
+                .requires(ModTags.Items.CUTTING_KNIVES)
+                .requires(Blocks.GOLD_BLOCK)
+                .unlockedBy("has_cutting_knife", has(ModTags.Items.CUTTING_KNIVES))
+                .save(recipeOutput, AmethystTech.MODID + ":" + "gold_plate_from_block");
     }
 
     // 锻造配方
