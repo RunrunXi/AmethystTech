@@ -3,6 +3,8 @@ package me.cyanhana.amethyst_tech.datagen;
 import me.cyanhana.amethyst_tech.AmethystTech;
 import me.cyanhana.amethyst_tech.block.ModBlocks;
 import me.cyanhana.amethyst_tech.item.ModItems;
+import me.cyanhana.amethyst_tech.recipes.cutting.CuttingRecipeBuilder;
+import me.cyanhana.amethyst_tech.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -27,6 +29,8 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         registerShapelessRecipe(recipeOutput);
         // 锻造配方
         registerSmithingRecipe(recipeOutput);
+        // 切割配方
+        registerCuttingRecipe(recipeOutput);
     }
 
     // 有序配方
@@ -50,7 +54,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput);
     }
 
-    // 无需配方
+    // 无序配方
     private void registerShapelessRecipe(RecipeOutput recipeOutput) {
         // 回响碎片
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.ECHO_SHARD, 4)
@@ -62,6 +66,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Blocks.AMETHYST_BLOCK)
                 .unlockedBy("has_amethyst_block", has(Blocks.AMETHYST_BLOCK))
                 .save(recipeOutput, AmethystTech.MODID + ":" + "amethyst_shard_from_block");
+    }
+
+    // 切割配方
+    private void registerCuttingRecipe(RecipeOutput recipeOutput) {
+        // 示例配方
+//        CuttingRecipeBuilder.cutting(RecipeCategory.MISC, Items.ECHO_SHARD, 1)
+//                .requires(ModTags.Items.CUTTING_KNIVES)
+//                .requires(Blocks.AMETHYST_BLOCK)
+//                .unlockedBy("has_amethyst_cutting_knife", has(ModItems.AMETHYST_CUTTING_KNIFE))
+//                .save(recipeOutput, AmethystTech.MODID + ":" + "echo_shard_from_block_cutting");
     }
 
     // 锻造配方
