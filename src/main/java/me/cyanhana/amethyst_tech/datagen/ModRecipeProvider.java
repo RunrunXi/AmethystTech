@@ -3,8 +3,6 @@ package me.cyanhana.amethyst_tech.datagen;
 import me.cyanhana.amethyst_tech.AmethystTech;
 import me.cyanhana.amethyst_tech.block.ModBlocks;
 import me.cyanhana.amethyst_tech.item.ModItems;
-import me.cyanhana.amethyst_tech.recipes.cutting.CuttingRecipeBuilder;
-import me.cyanhana.amethyst_tech.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
