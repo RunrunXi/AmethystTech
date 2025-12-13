@@ -29,5 +29,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.ECHO_HOE.get());
         // 切割刀
         basicItem(ModItems.AMETHYST_CUTTING_KNIFE.get());
+        // 金属板
+        basicItem(ModItems.IRON_PLATE.get());
+        basicItem(ModItems.COPPER_PLATE.get());
+        basicItem(ModItems.GOLD_PLATE.get());
     }
 }

@@ -45,6 +45,10 @@ public class ModCreativeModeTabs {
         output.accept(ModItems.ECHO_UPGRADE_SMITHING_TEMPLATE);
         // 切割刀
         output.accept(ModItems.AMETHYST_CUTTING_KNIFE);
+        // 金属板
+        output.accept(ModItems.IRON_PLATE);
+        output.accept(ModItems.COPPER_PLATE);
+        output.accept(ModItems.GOLD_PLATE);
     }
     // 添加创造模式标签页的方块
     private static void addBlocksToTab(CreativeModeTab.Output output) {

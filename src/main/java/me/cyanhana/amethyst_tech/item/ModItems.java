@@ -35,6 +35,10 @@ public class ModItems {
     public static final DeferredItem<Item> ECHO_PICKAXE = ITEMS.register("echo_pickaxe", EchoPickaxeItem::new);
     public static final DeferredItem<Item> ECHO_AXE = ITEMS.register("echo_axe", EchoAxeItem::new);
     public static final DeferredItem<Item> ECHO_HOE = ITEMS.register("echo_hoe", EchoHoeItem::new);
+    // 金属板
+    public static final DeferredItem<Item> IRON_PLATE = ITEMS.register("iron_plate", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> COPPER_PLATE = ITEMS.register("copper_plate", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> GOLD_PLATE = ITEMS.register("gold_plate", () -> new Item(new Item.Properties()));
 
     // 注册到总线
     public static void register(IEventBus eventBus) {

@@ -40,5 +40,13 @@ public class ModItemTagProvider extends ItemTagsProvider {
         // 切割刀
         tag(ModTags.Items.CUTTING_KNIVES)
                 .add(ModItems.AMETHYST_CUTTING_KNIFE.get());
+        // 金属板
+        tag(ModTags.Items.PLATES)
+                .add(ModItems.IRON_PLATE.get())
+                .add(ModItems.GOLD_PLATE.get())
+                .add(ModItems.COPPER_PLATE.get());
+        tag(ModTags.Items.IRON_PLATES).add(ModItems.IRON_PLATE.get());
+        tag(ModTags.Items.GOLD_PLATES).add(ModItems.GOLD_PLATE.get());
+        tag(ModTags.Items.COPPER_PLATES).add(ModItems.COPPER_PLATE.get());
     }
 }
