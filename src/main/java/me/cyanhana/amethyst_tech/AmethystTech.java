@@ -3,6 +3,8 @@ package me.cyanhana.amethyst_tech;
 import com.mojang.logging.LogUtils;
 import me.cyanhana.amethyst_tech.block.ModBlocks;
 import me.cyanhana.amethyst_tech.item.ModItems;
+import me.cyanhana.amethyst_tech.recipes.ModRecipeSerializers;
+import me.cyanhana.amethyst_tech.recipes.ModRecipeTypes;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.neoforged.api.distmarker.Dist;
@@ -47,6 +49,9 @@ public class AmethystTech {
         ModItems.register(modEventBus);
         // 注册方块
         ModBlocks.register(modEventBus);
+        // 注册配方类型
+        ModRecipeTypes.register(modEventBus);
+        ModRecipeSerializers.register(modEventBus);
 
         // 注册模组的ModConfigSpec以让FML自动创建和加载配置文件
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
