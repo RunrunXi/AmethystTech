@@ -62,7 +62,16 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('A', Items.AMETHYST_SHARD)
                 .define('S', Items.STICK)
                 .unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD))
-                .save(recipeOutput);
+                .save(recipeOutput, AmethystTech.MODID + ":" + "amethyst_cutting_knife_1");
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.AMETHYST_CUTTING_KNIFE)
+                .pattern("  D")
+                .pattern(" A ")
+                .pattern("S  ")
+                .define('D', Items.DIAMOND)
+                .define('A', Items.AMETHYST_SHARD)
+                .define('S', Items.STICK)
+                .unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD))
+                .save(recipeOutput, AmethystTech.MODID + ":" + "amethyst_cutting_knife_2");
     }
 
     // 无序配方
