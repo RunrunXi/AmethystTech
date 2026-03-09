@@ -16,19 +16,19 @@ public class ModItemModelProvider extends ItemModelProvider {
         // 锻造模版
         basicItem(ModItems.ECHO_UPGRADE_SMITHING_TEMPLATE.get());
         // 紫晶工具
-        basicItem(ModItems.AMETHYST_SWORD.get());
-        basicItem(ModItems.AMETHYST_SHOVEL.get());
-        basicItem(ModItems.AMETHYST_PICKAXE.get());
-        basicItem(ModItems.AMETHYST_AXE.get());
-        basicItem(ModItems.AMETHYST_HOE.get());
+        handheldItem(ModItems.AMETHYST_SWORD.get());
+        handheldItem(ModItems.AMETHYST_SHOVEL.get());
+        handheldItem(ModItems.AMETHYST_PICKAXE.get());
+        handheldItem(ModItems.AMETHYST_AXE.get());
+        handheldItem(ModItems.AMETHYST_HOE.get());
         // 回响工具
-        basicItem(ModItems.ECHO_SWORD.get());
-        basicItem(ModItems.ECHO_SHOVEL.get());
-        basicItem(ModItems.ECHO_PICKAXE.get());
-        basicItem(ModItems.ECHO_AXE.get());
-        basicItem(ModItems.ECHO_HOE.get());
+        handheldItem(ModItems.ECHO_SWORD.get());
+        handheldItem(ModItems.ECHO_SHOVEL.get());
+        handheldItem(ModItems.ECHO_PICKAXE.get());
+        handheldItem(ModItems.ECHO_AXE.get());
+        handheldItem(ModItems.ECHO_HOE.get());
         // 切割刀
-        basicItem(ModItems.AMETHYST_CUTTING_KNIFE.get());
+        handheldItem(ModItems.AMETHYST_CUTTING_KNIFE.get());
         // 金属板
         basicItem(ModItems.IRON_PLATE.get());
         basicItem(ModItems.COPPER_PLATE.get());
