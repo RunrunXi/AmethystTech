@@ -17,7 +17,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
-@EventBusSubscriber(modid = AmethystTech.MODID, bus = EventBusSubscriber.Bus.MOD)
+@EventBusSubscriber(modid = AmethystTech.MODID)
 public class DataGenerators {
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
