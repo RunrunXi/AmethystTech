@@ -95,7 +95,7 @@ public class AmethystTech {
      * bus: 指定事件总线类型（MOD总线）
      * value: 指定仅客户端环境下生效
      */
-    @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(modid = MODID, value = Dist.CLIENT)
     public static class ClientModEvents {
         /**
          * 客户端设置事件处理。
