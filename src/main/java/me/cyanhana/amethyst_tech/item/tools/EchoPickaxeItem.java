@@ -14,7 +14,7 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import java.util.List;
 
 public class EchoPickaxeItem extends PickaxeItem implements IntrinsicEnchantItem {
-    private final IntrinsicEnchantment intrinsicEnchantment = new IntrinsicEnchantment(Enchantments.EFFICIENCY, 1);
+    private final IntrinsicEnchantment intrinsicEnchantment = new IntrinsicEnchantment(Enchantments.MENDING, 1);
 
     public EchoPickaxeItem() {
         super(ModToolTiers.ECHO, new Properties()

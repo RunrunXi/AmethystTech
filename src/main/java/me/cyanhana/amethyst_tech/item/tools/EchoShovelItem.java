@@ -11,7 +11,7 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import java.util.List;
 
 public class EchoShovelItem extends ShovelItem implements IntrinsicEnchantItem {
-    private final IntrinsicEnchantment intrinsicEnchantment = new IntrinsicEnchantment(Enchantments.EFFICIENCY, 1);
+    private final IntrinsicEnchantment intrinsicEnchantment = new IntrinsicEnchantment(Enchantments.MENDING, 1);
 
     public EchoShovelItem() {
         super(ModToolTiers.ECHO, new Properties()
