@@ -15,14 +15,20 @@ import me.cyanhana.amethyst_tech.hooks.IntrinsicEnchantItem;
 // 借鉴了应用能源2(AE2)的内置附魔思路, 并对其进行了一些修改
 @Mixin(EnchantmentHelper.class)
 public class EnchantmentHelperMixin {
-    @Inject(at = @At("RETURN"), method = "getItemEnchantmentLevel", cancellable = true)
-    private static void hookGetItemEnchantmentLevel(Holder<Enchantment> enchantment, ItemStack stack,
+    @Inject(at = @At("RETURN"), method = "getTagEnchantmentLevel", cancellable = true)
+    private static void hookGetTagEnchantmentLevel(Holder<Enchantment> enchantment, ItemStack stack,
                                                     CallbackInfoReturnable<Integer> cir) {
         if (stack.getItem() instanceof IntrinsicEnchantItem item) {
             int level = item.getIntrinsicEnchantLevel(stack, enchantment);
+            // 有魔咒时
             if (level != 0) {
-                // 与原版附魔等级可叠加
-                int totalLevel = cir.getReturnValueI() + level;
+                int totalLevel;
+                // 魔咒最大等级不为 1 时叠加魔咒等级
+                if (enchantment.value().getMaxLevel() != 1) {
+                    totalLevel = cir.getReturnValueI() + level;
+                } else {
+                    totalLevel = 1;
+                }
                 cir.setReturnValue(totalLevel);
             }
         }
