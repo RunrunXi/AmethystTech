@@ -43,6 +43,8 @@ public class AmethystTech {
         // 如果此类中没有像下文onServerStarting()这样使用@SubscribeEvent注解的函数，请勿添加此行。
         NeoForge.EVENT_BUS.register(this);
 
+        // 注册数据组件
+        ModDataComponents.register(modEventBus);
         // 注册创造模式标签页
         ModCreativeModeTabs.register(modEventBus);
         // 注册物品
