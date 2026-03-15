@@ -14,7 +14,7 @@ public class EchoPickaxeItem extends PickaxeItem implements EchoItem {
 
     public EchoPickaxeItem() {
         super(ModToolTiers.ECHO, new Properties()
-                .attributes(PickaxeItem.createAttributes(ModToolTiers.ECHO, 3, -2.4F)));
+                .attributes(PickaxeItem.createAttributes(ModToolTiers.ECHO, 1.0F, -2.8F)));
     }
 
     @Override

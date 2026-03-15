@@ -1,5 +1,6 @@
 package me.cyanhana.amethyst_tech.item.tools;
 
+import me.cyanhana.amethyst_tech.ModDataComponents;
 import me.cyanhana.amethyst_tech.item.EchoItem;
 import me.cyanhana.amethyst_tech.util.ModToolTiers;
 import net.minecraft.ChatFormatting;
@@ -14,13 +15,14 @@ public class EchoAxeItem extends AxeItem implements EchoItem {
 
     public EchoAxeItem() {
         super(ModToolTiers.ECHO, new Properties()
-                .attributes(AxeItem.createAttributes(ModToolTiers.ECHO, 6.0F, -3.1F)));
+                .attributes(AxeItem.createAttributes(ModToolTiers.ECHO, 5.0F, -3.0F)));
     }
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         tooltipComponents.add(Component.empty()
                 .append(Component.translatable("gui.amethyst_tech.echo_tool_tooltip")).withStyle(ChatFormatting.GRAY)
+                .append(stack.getOrDefault(ModDataComponents.XP_CHARGE, 0).toString())
         );
     }
 }

@@ -14,7 +14,7 @@ public class EchoHoeItem extends HoeItem implements EchoItem {
 
     public EchoHoeItem() {
         super(ModToolTiers.ECHO, new Properties()
-                .attributes(HoeItem.createAttributes(ModToolTiers.ECHO, -2.0F, -1.0F)));
+                .attributes(HoeItem.createAttributes(ModToolTiers.ECHO, -4.0F, 0F)));
     }
 
     @Override
