@@ -21,5 +21,6 @@
   "item.amethyst_tech.smithing_template.echo_upgrade.base_slot_description": "Add amethyst weapon or tool",
   "item.amethyst_tech.smithing_template.echo_upgrade.additions_slot_description": "Add echo block",
   "block.amethyst_tech.echo_block": "Echo Block",
-  "gui.amethyst_tech.echo_tool_tooltip": "Repairs durability when picking up experience"
+  "gui.amethyst_tech.echo_tool_tooltip": "Repairs durability when picking up experience",
+  "gui.amethyst_tech.xp_charge": "XP Charge:"
 }

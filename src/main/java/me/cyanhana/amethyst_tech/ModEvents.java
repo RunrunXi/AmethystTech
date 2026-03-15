@@ -4,7 +4,6 @@ import me.cyanhana.amethyst_tech.helper.IntrinsicEnchantmentHelper;
 import me.cyanhana.amethyst_tech.item.EchoItem;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.ExperienceOrb;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.neoforged.bus.api.SubscribeEvent;
