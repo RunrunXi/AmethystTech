@@ -2,7 +2,6 @@
   "required": true,
   "package": "me.cyanhana.amethyst_tech.mixin",
   "mixins": [
-    "EnchantmentHelperMixin"
   ],
   "client": [],
   "server": [],
