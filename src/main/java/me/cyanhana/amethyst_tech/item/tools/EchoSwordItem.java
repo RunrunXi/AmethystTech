@@ -1,20 +1,16 @@
 package me.cyanhana.amethyst_tech.item.tools;
 
-import me.cyanhana.amethyst_tech.hooks.IntrinsicEnchantItem;
+import me.cyanhana.amethyst_tech.item.EchoItem;
 import me.cyanhana.amethyst_tech.util.ModToolTiers;
-import net.minecraft.core.Holder;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.TooltipFlag;
-import net.minecraft.world.item.enchantment.Enchantment;
-import net.minecraft.world.item.enchantment.Enchantments;
 
 import java.util.List;
 
-public class EchoSwordItem extends SwordItem implements IntrinsicEnchantItem {
-    private final IntrinsicEnchantment intrinsicEnchantment = new IntrinsicEnchantment(Enchantments.MENDING, 1);
+public class EchoSwordItem extends SwordItem implements EchoItem {
 
     public EchoSwordItem() {
         super(ModToolTiers.ECHO, new Properties()
@@ -22,17 +18,9 @@ public class EchoSwordItem extends SwordItem implements IntrinsicEnchantItem {
     }
 
     @Override
-    public int getIntrinsicEnchantLevel(ItemStack stack, Holder<Enchantment> enchantment) {
-        return intrinsicEnchantment.getLevel(enchantment);
-    }
-
-    @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-        intrinsicEnchantment.appendHoverText(context, tooltipComponents);
-    }
-
-    @Override
-    public boolean isFoil(ItemStack stack) {
-        return true;
+        tooltipComponents.add(Component.empty()
+                .append(Component.translatable("gui.amethyst_tech.echo_tool_tooltip")).withStyle(ChatFormatting.GRAY)
+        );
     }
 }
