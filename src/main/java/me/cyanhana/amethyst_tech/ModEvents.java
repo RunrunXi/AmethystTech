@@ -2,12 +2,15 @@ package me.cyanhana.amethyst_tech;
 
 import me.cyanhana.amethyst_tech.helper.IntrinsicEnchantmentHelper;
 import me.cyanhana.amethyst_tech.item.EchoItem;
+import me.cyanhana.amethyst_tech.renderer.XpChargeBarDecorator;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.ExperienceOrb;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.client.event.RegisterItemDecorationsEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerXpEvent;
 
 import java.util.Optional;
@@ -54,5 +57,13 @@ public class ModEvents {
         return value;
     }
 
+    @SubscribeEvent
+    public static void registerItemDecorators(RegisterItemDecorationsEvent event) {
+        BuiltInRegistries.ITEM.stream()
+                .filter(item -> item instanceof EchoItem)
+                .forEach(item -> {
+                    event.register(item, new XpChargeBarDecorator());
+                });
+    }
 
 }
