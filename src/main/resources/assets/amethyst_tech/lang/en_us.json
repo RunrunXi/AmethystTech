@@ -23,8 +23,10 @@
   "item.amethyst_tech.smithing_template.echo_upgrade.base_slot_description": "Add amethyst weapon or tool",
   "item.amethyst_tech.smithing_template.echo_upgrade.additions_slot_description": "Add echo block",
   "block.amethyst_tech.echo_block": "Echo Block",
-  "gui.amethyst_tech.echo_tool_tooltip": "Repairs durability when picking up experience",
-  "gui.amethyst_tech.xp_charge": "XP Charge:",
-  "gui.amethyst_tech.bow_draw_speed_multi": " Draw Speed",
-  "gui.amethyst_tech.bow_bonus_damage": " Arrow Damage"
+  "gui.amethyst_tech.tooltip.echo_tool_tooltip_0": "Repairs self when picking up experience",
+  "gui.amethyst_tech.tooltip.echo_tool_tooltip_1": "Grants stat bonuses when charged",
+  "gui.amethyst_tech.tooltip.xp_charge": "XP Charge:",
+  "gui.amethyst_tech.tooltip.bow_draw_speed_multi": " Draw Speed",
+  "gui.amethyst_tech.tooltip.bow_bonus_damage": " Arrow Damage",
+  "gui.amethyst_tech.tooltip.amethyst_tool_tooltip": "Amethyst will repairs self by time"
 }
