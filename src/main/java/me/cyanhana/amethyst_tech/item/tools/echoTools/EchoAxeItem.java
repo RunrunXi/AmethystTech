@@ -21,9 +21,6 @@ public class EchoAxeItem extends AxeItem implements EchoItem {
 
     @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
-        tooltipComponents.add(Component.empty()
-                .append(Component.translatable("gui.amethyst_tech.echo_tool_tooltip")).withStyle(ChatFormatting.DARK_GRAY)
-        );
         this.xpChargeHoverText(stack, tooltipComponents);
     }
 

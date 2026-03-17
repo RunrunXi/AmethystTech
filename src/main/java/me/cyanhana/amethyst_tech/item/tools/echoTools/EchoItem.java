@@ -51,8 +51,10 @@ public interface EchoItem {
         return Math.round(13.0F * getXpCharge(stack) / EchoItem.MAX_CHARGE);
     }
     default void xpChargeHoverText(ItemStack stack, List<Component> tooltipComponents) {
+        tooltipComponents.add(Component.translatable("gui.amethyst_tech.tooltip.echo_tool_tooltip_0").withStyle(ChatFormatting.DARK_GRAY));
+        tooltipComponents.add(Component.translatable("gui.amethyst_tech.tooltip.echo_tool_tooltip_1").withStyle(ChatFormatting.DARK_GRAY));
         tooltipComponents.add(Component.empty()
-                .append(Component.translatable("gui.amethyst_tech.xp_charge").withStyle(ChatFormatting.GRAY))
+                .append(Component.translatable("gui.amethyst_tech.tooltip.xp_charge").withStyle(ChatFormatting.GRAY))
                 .append(" ")
                 .append(Component.literal(stack.getOrDefault(ModDataComponents.XP_CHARGE, 0).toString()).withStyle(ChatFormatting.GREEN))
                 .append(Component.literal("/").withStyle(ChatFormatting.GRAY))
