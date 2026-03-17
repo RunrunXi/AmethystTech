@@ -8,7 +8,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
@@ -37,7 +36,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ItemTags.HOES)
                 .add(ModItems.AMETHYST_HOE.get())
                 .add(ModItems.ECHO_HOE.get());
+        // 弓
         tag(ModTags.Items.BOWS)
+                .add(ModItems.AMETHYST_BOW.get())
+                .add(ModItems.ECHO_BOW.get());
+        tag(ItemTags.BOW_ENCHANTABLE)
                 .add(ModItems.AMETHYST_BOW.get())
                 .add(ModItems.ECHO_BOW.get());
         // 切割刀
