@@ -1,25 +1,23 @@
-package me.cyanhana.amethyst_tech.item.tools;
+package me.cyanhana.amethyst_tech.item.tools.echoTools;
 
-import me.cyanhana.amethyst_tech.item.EchoItem;
 import me.cyanhana.amethyst_tech.util.ModToolTiers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ShovelItem;
+import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.List;
 
-public class EchoShovelItem extends ShovelItem implements EchoItem {
+public class EchoSwordItem extends SwordItem implements EchoItem {
 
-    public EchoShovelItem() {
+    public EchoSwordItem() {
         super(ModToolTiers.ECHO, new Properties()
-                .attributes(ShovelItem.createAttributes(ModToolTiers.ECHO, 1.5F, -3.0F)));
+                .attributes(SwordItem.createAttributes(ModToolTiers.ECHO, 3, -2.4F)));
     }
 
     @Override
@@ -32,7 +30,7 @@ public class EchoShovelItem extends ShovelItem implements EchoItem {
 
     @Override
     public void postHurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        itemPostHurtEnemy(stack, target, attacker, 2);
+        itemPostHurtEnemy(stack, target, attacker, 1);
     }
 
     @Override

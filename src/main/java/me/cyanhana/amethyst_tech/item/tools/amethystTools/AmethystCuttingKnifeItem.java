@@ -1,4 +1,4 @@
-package me.cyanhana.amethyst_tech.item.tools;
+package me.cyanhana.amethyst_tech.item.tools.amethystTools;
 
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;

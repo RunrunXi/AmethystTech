@@ -1,4 +1,4 @@
-package me.cyanhana.amethyst_tech.item;
+package me.cyanhana.amethyst_tech.item.tools.echoTools;
 
 import me.cyanhana.amethyst_tech.AmethystTech;
 import me.cyanhana.amethyst_tech.ModDataComponents;

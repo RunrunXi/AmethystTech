@@ -1,4 +1,4 @@
-package me.cyanhana.amethyst_tech.item.tools;
+package me.cyanhana.amethyst_tech.item.tools.amethystTools;
 
 import me.cyanhana.amethyst_tech.util.ModToolTiers;
 import net.minecraft.world.item.SwordItem;

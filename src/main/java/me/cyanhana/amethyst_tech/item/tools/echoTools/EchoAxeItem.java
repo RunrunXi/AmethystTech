@@ -1,13 +1,11 @@
-package me.cyanhana.amethyst_tech.item.tools;
+package me.cyanhana.amethyst_tech.item.tools.echoTools;
 
-import me.cyanhana.amethyst_tech.item.EchoItem;
 import me.cyanhana.amethyst_tech.util.ModToolTiers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.HoeItem;
+import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
@@ -15,11 +13,10 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import java.util.List;
 
-public class EchoHoeItem extends HoeItem implements EchoItem {
-
-    public EchoHoeItem() {
+public class EchoAxeItem extends AxeItem implements EchoItem {
+    public EchoAxeItem() {
         super(ModToolTiers.ECHO, new Properties()
-                .attributes(HoeItem.createAttributes(ModToolTiers.ECHO, -4.0F, 0F)));
+                .attributes(AxeItem.createAttributes(ModToolTiers.ECHO, 5.0F, -3.0F)));
     }
 
     @Override

@@ -1,7 +1,7 @@
 package me.cyanhana.amethyst_tech.renderer;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import me.cyanhana.amethyst_tech.item.EchoItem;
+import me.cyanhana.amethyst_tech.item.tools.echoTools.EchoItem;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.world.item.ItemStack;

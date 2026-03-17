@@ -1,7 +1,7 @@
 package me.cyanhana.amethyst_tech;
 
 import me.cyanhana.amethyst_tech.helper.IntrinsicEnchantmentHelper;
-import me.cyanhana.amethyst_tech.item.EchoItem;
+import me.cyanhana.amethyst_tech.item.tools.echoTools.EchoItem;
 import me.cyanhana.amethyst_tech.renderer.XpChargeBarDecorator;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.server.level.ServerPlayer;
