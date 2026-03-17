@@ -1,5 +1,6 @@
-package me.cyanhana.amethyst_tech;
+package me.cyanhana.amethyst_tech.event;
 
+import me.cyanhana.amethyst_tech.AmethystTech;
 import me.cyanhana.amethyst_tech.helper.IntrinsicEnchantmentHelper;
 import me.cyanhana.amethyst_tech.item.tools.echoTools.EchoItem;
 import me.cyanhana.amethyst_tech.renderer.XpChargeBarDecorator;
