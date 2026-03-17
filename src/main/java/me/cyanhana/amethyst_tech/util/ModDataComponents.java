@@ -1,6 +1,7 @@
-package me.cyanhana.amethyst_tech;
+package me.cyanhana.amethyst_tech.util;
 
 import com.mojang.serialization.Codec;
+import me.cyanhana.amethyst_tech.AmethystTech;
 import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.codec.ByteBufCodecs;

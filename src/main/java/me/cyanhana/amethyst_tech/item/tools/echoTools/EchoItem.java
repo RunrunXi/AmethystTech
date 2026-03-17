@@ -1,7 +1,7 @@
 package me.cyanhana.amethyst_tech.item.tools.echoTools;
 
 import me.cyanhana.amethyst_tech.AmethystTech;
-import me.cyanhana.amethyst_tech.ModDataComponents;
+import me.cyanhana.amethyst_tech.util.ModDataComponents;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.component.DataComponents;
