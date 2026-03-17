@@ -24,5 +24,7 @@
   "item.amethyst_tech.smithing_template.echo_upgrade.additions_slot_description": "Add echo block",
   "block.amethyst_tech.echo_block": "Echo Block",
   "gui.amethyst_tech.echo_tool_tooltip": "Repairs durability when picking up experience",
-  "gui.amethyst_tech.xp_charge": "XP Charge:"
+  "gui.amethyst_tech.xp_charge": "XP Charge:",
+  "gui.amethyst_tech.bow_draw_speed_multi": " Draw Speed",
+  "gui.amethyst_tech.bow_bonus_damage": " Arrow Damage"
 }

@@ -39,7 +39,10 @@ public interface EchoItem {
     default void setXpCharge(ItemStack stack, int value) {
         int clampedCharge = Math.clamp(value, 0, MAX_CHARGE);
         stack.set(ModDataComponents.XP_CHARGE, clampedCharge);
-        enableAttributeModifier(stack, getXpCharge(stack) > 0);
+        update(stack);
+    }
+    default void consumeXpCharge(ItemStack stack) {
+        setXpCharge(stack, getXpCharge(stack) - 1);
     }
     default boolean hasXpCharge(ItemStack stack) {
         return getXpCharge(stack) > 0;
@@ -56,14 +59,21 @@ public interface EchoItem {
                 .append(Component.literal(String.valueOf(MAX_CHARGE)).withStyle(ChatFormatting.GREEN))
         );
     }
-    default void enableAttributeModifier(ItemStack stack, boolean isEnable) {
-        // 如果状态没有变化，提前返回，避免不必要的操作
-        boolean currentlyEnabled = stack.getOrDefault(DataComponents.ATTRIBUTE_MODIFIERS,
+    // 更新物品状态
+    default void update(ItemStack stack) {
+        // 有充能时加成属性
+        enableAttributeModifier(stack, getXpCharge(stack) > 0);
+    }
+    // 检查物品是否有匹配的组件
+    private boolean hasAttributeModifier(ItemStack stack) {
+        return stack.getOrDefault(DataComponents.ATTRIBUTE_MODIFIERS,
                         ItemAttributeModifiers.EMPTY)
                 .modifiers().stream()
                 .anyMatch(entry -> entry.modifier().id().equals(CHARGE_DAMAGE_MODIFIER_ID));
-
-        if (currentlyEnabled == isEnable) {
+    }
+    default void enableAttributeModifier(ItemStack stack, boolean isEnable) {
+        // 如果状态没有变化，提前返回，避免不必要的操作
+        if (hasAttributeModifier(stack) == isEnable) {
             return;
         }
         // 获取当前的修饰符组件
@@ -98,15 +108,15 @@ public interface EchoItem {
         // 设置更新后的修饰符组件
         stack.set(DataComponents.ATTRIBUTE_MODIFIERS, builder.build());
     }
-
+    // 攻击后减少充能
     default void itemPostHurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker, int amount) {
         if (!hasXpCharge(stack)) {
             stack.hurtAndBreak(amount, attacker, EquipmentSlot.MAINHAND);
         } else {
-            setXpCharge(stack, getXpCharge(stack) - 1);
+            consumeXpCharge(stack);
         }
     }
-
+    // 挖掘后减少充能
     default boolean itemMineBlock(ItemStack stack, Level level, BlockState state, BlockPos pos, LivingEntity miningEntity) {
         Tool tool = stack.get(DataComponents.TOOL);
         if (tool == null) {
@@ -116,7 +126,7 @@ public interface EchoItem {
                 if (!hasXpCharge(stack)) {
                     stack.hurtAndBreak(tool.damagePerBlock(), miningEntity, EquipmentSlot.MAINHAND);
                 } else {
-                    setXpCharge(stack, getXpCharge(stack) - 1);
+                    consumeXpCharge(stack);
                 }
             }
             return true;

@@ -1,6 +1,7 @@
 package me.cyanhana.amethyst_tech.util;
 
 import me.cyanhana.amethyst_tech.item.ModItems;
+import me.cyanhana.amethyst_tech.item.tools.IModBow;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
@@ -24,10 +25,11 @@ public class ModItemProperties {
 
                     // 计算拉弓进度
                     int useDuration = stack.getUseDuration(entity) - entity.getUseItemRemainingTicks();
-                    float progress = (float) useDuration / 20.0F;  // 20 ticks = 1秒
+                    double drawSpeedMulti = ((IModBow) stack.getItem()).getDrawSpeedMulti(stack);
+                    float progress = (float) (useDuration * drawSpeedMulti) / 20.0F;  // 20 ticks = 1秒
 
                     // 限制在0-1之间
-                    return Math.min(1.0F, progress);
+                    return Math.clamp(progress, 0.0F, 1.0F);
                 }
         );
 

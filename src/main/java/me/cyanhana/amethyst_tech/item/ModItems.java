@@ -1,7 +1,7 @@
 package me.cyanhana.amethyst_tech.item;
 
 import me.cyanhana.amethyst_tech.AmethystTech;
-import me.cyanhana.amethyst_tech.item.tools.*;
+import me.cyanhana.amethyst_tech.item.tools.EchoUpgradeSmithingTemplateItem;
 import me.cyanhana.amethyst_tech.item.tools.amethystTools.*;
 import me.cyanhana.amethyst_tech.item.tools.echoTools.*;
 import net.minecraft.world.item.*;

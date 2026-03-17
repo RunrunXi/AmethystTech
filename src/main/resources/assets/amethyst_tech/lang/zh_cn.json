@@ -24,5 +24,7 @@
   "item.amethyst_tech.smithing_template.echo_upgrade.additions_slot_description": "放入回响块",
   "block.amethyst_tech.echo_block": "回响块",
   "gui.amethyst_tech.echo_tool_tooltip": "拾取经验时修复耐久",
-  "gui.amethyst_tech.xp_charge": "经验充能:"
+  "gui.amethyst_tech.xp_charge": "经验充能:",
+  "gui.amethyst_tech.bow_draw_speed_multi": " 拉弓速度",
+  "gui.amethyst_tech.bow_bonus_damage": " 箭矢伤害"
 }
