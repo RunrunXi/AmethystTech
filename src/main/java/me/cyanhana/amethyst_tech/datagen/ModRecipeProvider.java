@@ -71,6 +71,55 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Items.STICK)
                 .unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD))
                 .save(recipeOutput, AmethystTech.MODID + ":" + "amethyst_cutting_knife_2");
+        // 紫水晶工具
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.AMETHYST_SWORD)
+                .pattern("A")
+                .pattern("A")
+                .pattern("S")
+                .define('A', Items.AMETHYST_SHARD)
+                .define('S', Items.STICK)
+                .unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.AMETHYST_SHOVEL)
+                .pattern("A")
+                .pattern("S")
+                .pattern("S")
+                .define('A', Items.AMETHYST_SHARD)
+                .define('S', Items.STICK)
+                .unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.AMETHYST_PICKAXE)
+                .pattern("AAA")
+                .pattern(" S ")
+                .pattern(" S ")
+                .define('A', Items.AMETHYST_SHARD)
+                .define('S', Items.STICK)
+                .unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.AMETHYST_AXE)
+                .pattern("AA")
+                .pattern("AS")
+                .pattern(" S")
+                .define('A', Items.AMETHYST_SHARD)
+                .define('S', Items.STICK)
+                .unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, ModItems.AMETHYST_HOE)
+                .pattern("AA")
+                .pattern(" S")
+                .pattern(" S")
+                .define('A', Items.AMETHYST_SHARD)
+                .define('S', Items.STICK)
+                .unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.COMBAT, ModItems.AMETHYST_BOW)
+                .pattern(" AS")
+                .pattern("A S")
+                .pattern(" AS")
+                .define('A', Items.AMETHYST_SHARD)
+                .define('S', Items.STRING)
+                .unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD))
+                .save(recipeOutput);
     }
 
     // 无序配方
@@ -85,6 +134,19 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Blocks.AMETHYST_BLOCK)
                 .unlockedBy("has_amethyst_block", has(Blocks.AMETHYST_BLOCK))
                 .save(recipeOutput, AmethystTech.MODID + ":" + "amethyst_shard_from_block");
+        // 金属块
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.IRON_BLOCK, 1)
+                .requires(ModItems.IRON_PLATE, 9)
+                .unlockedBy("has_iron_plate", has(ModItems.IRON_PLATE))
+                .save(recipeOutput, AmethystTech.MODID + ":" + "iron_block_from_plate");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.GOLD_BLOCK, 1)
+                .requires(ModItems.GOLD_PLATE, 9)
+                .unlockedBy("has_gold_plate", has(ModItems.GOLD_PLATE))
+                .save(recipeOutput, AmethystTech.MODID + ":" + "gold_block_from_plate");
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.COPPER_BLOCK, 1)
+                .requires(ModItems.COPPER_PLATE, 9)
+                .unlockedBy("has_copper_plate", has(ModItems.COPPER_PLATE))
+                .save(recipeOutput, AmethystTech.MODID + ":" + "copper_block_from_plate");
     }
 
     // 切割配方
@@ -113,6 +175,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         echoSmithing(recipeOutput, ModItems.AMETHYST_PICKAXE.get(), RecipeCategory.TOOLS, ModItems.ECHO_PICKAXE.get());
         echoSmithing(recipeOutput, ModItems.AMETHYST_AXE.get(), RecipeCategory.TOOLS, ModItems.ECHO_AXE.get());
         echoSmithing(recipeOutput, ModItems.AMETHYST_HOE.get(), RecipeCategory.TOOLS, ModItems.ECHO_HOE.get());
+        echoSmithing(recipeOutput, ModItems.AMETHYST_BOW.get(), RecipeCategory.COMBAT, ModItems.ECHO_BOW.get());
     }
 
     // 回响锻造配方模板
