@@ -21,12 +21,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.AMETHYST_PICKAXE.get());
         handheldItem(ModItems.AMETHYST_AXE.get());
         handheldItem(ModItems.AMETHYST_HOE.get());
+        handheldItem(ModItems.AMETHYST_BOW.get());
         // 回响工具
         handheldItem(ModItems.ECHO_SWORD.get());
         handheldItem(ModItems.ECHO_SHOVEL.get());
         handheldItem(ModItems.ECHO_PICKAXE.get());
         handheldItem(ModItems.ECHO_AXE.get());
         handheldItem(ModItems.ECHO_HOE.get());
+        handheldItem(ModItems.ECHO_BOW.get());
         // 切割刀
         handheldItem(ModItems.AMETHYST_CUTTING_KNIFE.get());
         // 金属板

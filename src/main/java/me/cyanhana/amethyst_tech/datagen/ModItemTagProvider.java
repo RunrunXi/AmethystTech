@@ -37,6 +37,9 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ItemTags.HOES)
                 .add(ModItems.AMETHYST_HOE.get())
                 .add(ModItems.ECHO_HOE.get());
+        tag(ModTags.Items.BOWS)
+                .add(ModItems.AMETHYST_BOW.get())
+                .add(ModItems.ECHO_BOW.get());
         // 切割刀
         tag(ModTags.Items.CUTTING_KNIVES)
                 .add(ModItems.AMETHYST_CUTTING_KNIFE.get());

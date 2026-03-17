@@ -2,6 +2,8 @@ package me.cyanhana.amethyst_tech.item;
 
 import me.cyanhana.amethyst_tech.AmethystTech;
 import me.cyanhana.amethyst_tech.item.tools.*;
+import me.cyanhana.amethyst_tech.item.tools.amethystTools.*;
+import me.cyanhana.amethyst_tech.item.tools.echoTools.*;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -26,6 +28,7 @@ public class ModItems {
     public static final DeferredItem<PickaxeItem> AMETHYST_PICKAXE = ITEMS.register("amethyst_pickaxe", AmethystPickaxeItem::new);
     public static final DeferredItem<AxeItem> AMETHYST_AXE = ITEMS.register("amethyst_axe", AmethystAxeItem::new);
     public static final DeferredItem<HoeItem> AMETHYST_HOE = ITEMS.register("amethyst_hoe", AmethystHoeItem::new);
+    public static final DeferredItem<BowItem> AMETHYST_BOW = ITEMS.register("amethyst_bow", AmethystBowItem::new);
     // 切割刀
     public static final DeferredItem<Item> AMETHYST_CUTTING_KNIFE = ITEMS.register("amethyst_cutting_knife", AmethystCuttingKnifeItem::new);
     // 回响工具
@@ -34,6 +37,7 @@ public class ModItems {
     public static final DeferredItem<PickaxeItem> ECHO_PICKAXE = ITEMS.register("echo_pickaxe", EchoPickaxeItem::new);
     public static final DeferredItem<AxeItem> ECHO_AXE = ITEMS.register("echo_axe", EchoAxeItem::new);
     public static final DeferredItem<HoeItem> ECHO_HOE = ITEMS.register("echo_hoe", EchoHoeItem::new);
+    public static final DeferredItem<BowItem> ECHO_BOW = ITEMS.register("echo_bow", EchoBowItem::new);
     // 金属板
     public static final DeferredItem<Item> IRON_PLATE = ITEMS.register("iron_plate", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> COPPER_PLATE = ITEMS.register("copper_plate", () -> new Item(new Item.Properties()));

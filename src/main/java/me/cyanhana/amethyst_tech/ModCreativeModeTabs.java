@@ -35,12 +35,14 @@ public class ModCreativeModeTabs {
         output.accept(ModItems.AMETHYST_PICKAXE);
         output.accept(ModItems.AMETHYST_AXE);
         output.accept(ModItems.AMETHYST_HOE);
+        output.accept(ModItems.AMETHYST_BOW);
         // 回响工具
         output.accept(ModItems.ECHO_SWORD);
         output.accept(ModItems.ECHO_SHOVEL);
         output.accept(ModItems.ECHO_PICKAXE);
         output.accept(ModItems.ECHO_AXE);
         output.accept(ModItems.ECHO_HOE);
+        output.accept(ModItems.ECHO_BOW);
         // 锻造模板
         output.accept(ModItems.ECHO_UPGRADE_SMITHING_TEMPLATE);
         // 切割刀
