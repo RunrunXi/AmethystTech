@@ -1,0 +1,6 @@
+{
+    "parent": "amethyst_tech:item/amethyst_bow",
+    "textures": {
+        "layer0": "amethyst_tech:item/amethyst_bow_pulling_2"
+    }
+}
