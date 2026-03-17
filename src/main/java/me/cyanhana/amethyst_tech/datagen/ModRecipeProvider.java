@@ -12,6 +12,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Blocks;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 
 import java.util.concurrent.CompletableFuture;
@@ -136,15 +137,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput, AmethystTech.MODID + ":" + "amethyst_shard_from_block");
         // 金属块
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.IRON_BLOCK, 1)
-                .requires(ModItems.IRON_PLATE, 9)
+                .requires(Ingredient.of(ModTags.Items.IRON_PLATES), 9)
                 .unlockedBy("has_iron_plate", has(ModItems.IRON_PLATE))
                 .save(recipeOutput, AmethystTech.MODID + ":" + "iron_block_from_plate");
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.GOLD_BLOCK, 1)
-                .requires(ModItems.GOLD_PLATE, 9)
+                .requires(Ingredient.of(ModTags.Items.GOLD_PLATES), 9)
                 .unlockedBy("has_gold_plate", has(ModItems.GOLD_PLATE))
                 .save(recipeOutput, AmethystTech.MODID + ":" + "gold_block_from_plate");
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.COPPER_BLOCK, 1)
-                .requires(ModItems.COPPER_PLATE, 9)
+                .requires(Ingredient.of(ModTags.Items.COPPER_PLATES), 9)
                 .unlockedBy("has_copper_plate", has(ModItems.COPPER_PLATE))
                 .save(recipeOutput, AmethystTech.MODID + ":" + "copper_block_from_plate");
     }
