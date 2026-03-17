@@ -5,8 +5,8 @@ import me.cyanhana.amethyst_tech.block.ModBlocks;
 import me.cyanhana.amethyst_tech.item.ModItems;
 import me.cyanhana.amethyst_tech.recipes.ModRecipeSerializers;
 import me.cyanhana.amethyst_tech.recipes.ModRecipeTypes;
-import net.minecraft.client.Minecraft;
-import net.minecraft.world.item.CreativeModeTabs;
+import me.cyanhana.amethyst_tech.util.ModDataComponents;
+import me.cyanhana.amethyst_tech.util.ModItemProperties;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -17,7 +17,6 @@ import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 import org.slf4j.Logger;
 
@@ -105,10 +104,7 @@ public class AmethystTech {
          */
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            // 客户端专用设置代码
-            LOGGER.info("[客户端设置] 初始化开始");
-            // 获取并输出当前Minecraft玩家名称
-            LOGGER.info("玩家名称 >> {}", Minecraft.getInstance().getUser().getName());
+            ModItemProperties.addCustomItemProperties();
         }
     }
 }
