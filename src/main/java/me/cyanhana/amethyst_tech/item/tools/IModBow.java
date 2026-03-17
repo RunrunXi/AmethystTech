@@ -15,13 +15,13 @@ public interface IModBow {
         if (drawSpeedMulti != 1.0F) {
             tooltipComponents.add(Component.empty()
                     .append(getPercentValue(drawSpeedMulti))
-                    .append(Component.translatable("gui.amethyst_tech.bow_draw_speed_multi").withStyle(ChatFormatting.BLUE))
+                    .append(Component.translatable("gui.amethyst_tech.tooltip.bow_draw_speed_multi").withStyle(ChatFormatting.BLUE))
             );
         }
         if (bonusDamage != 1.0F) {
             tooltipComponents.add(Component.empty()
                     .append(getPercentValue(bonusDamage))
-                    .append(Component.translatable("gui.amethyst_tech.bow_bonus_damage").withStyle(ChatFormatting.BLUE))
+                    .append(Component.translatable("gui.amethyst_tech.tooltip.bow_bonus_damage").withStyle(ChatFormatting.BLUE))
             );
         }
     }
