@@ -61,5 +61,9 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ModTags.Items.IRON_PLATES).add(ModItems.IRON_PLATE.get());
         tag(ModTags.Items.GOLD_PLATES).add(ModItems.GOLD_PLATE.get());
         tag(ModTags.Items.COPPER_PLATES).add(ModItems.COPPER_PLATE.get());
+
+        tag(ItemTags.CLUSTER_MAX_HARVESTABLES)
+                .add(ModItems.AMETHYST_PICKAXE.get())
+                .add(ModItems.ECHO_PICKAXE.get());
     }
 }

@@ -3,6 +3,7 @@ package me.cyanhana.amethyst_tech.datagen;
 import me.cyanhana.amethyst_tech.AmethystTech;
 import me.cyanhana.amethyst_tech.item.ModItems;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
@@ -33,5 +34,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.IRON_PLATE.get());
         basicItem(ModItems.COPPER_PLATE.get());
         basicItem(ModItems.GOLD_PLATE.get());
+
+    }
+
+    private ResourceLocation blockItem(String name) {
+        return ResourceLocation.fromNamespaceAndPath(AmethystTech.MODID, "block/" + name);
     }
 }

@@ -20,8 +20,18 @@ public class ModBlockTagProvider extends BlockTagsProvider {
     protected void addTags(HolderLookup.Provider provider) {
         // 方块需要的挖掘工具
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.ECHO_BLOCK.get());
+                .add(ModBlocks.ECHO_BLOCK.get())
+                .add(ModBlocks.SMALL_ECHO_BUD.get())
+                .add(ModBlocks.MEDIUM_ECHO_BUD.get())
+                .add(ModBlocks.LARGE_ECHO_BUD.get())
+                .add(ModBlocks.ECHO_CLUSTER.get())
+                .add(ModBlocks.BUDDING_ECHO.get());
         // 方块需要的挖掘等级
 //        tag(BlockTags.NEEDS_IRON_TOOL)
+        tag(BlockTags.CRYSTAL_SOUND_BLOCKS)
+                .add(ModBlocks.ECHO_BLOCK.get())
+                .add(ModBlocks.BUDDING_ECHO.get());
+        tag(BlockTags.INSIDE_STEP_SOUND_BLOCKS)
+                .add(ModBlocks.SMALL_ECHO_BUD.get());
     }
 }
