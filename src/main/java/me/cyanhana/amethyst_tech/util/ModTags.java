@@ -19,8 +19,6 @@ public class ModTags {
         public static final TagKey<Item> IRON_PLATES = commonTag("plates/iron");
         public static final TagKey<Item> GOLD_PLATES = commonTag("plates/gold");
         public static final TagKey<Item> COPPER_PLATES = commonTag("plates/copper");
-        // 弓
-        public static final TagKey<Item> BOWS = commonTag("bows");
 
         private static TagKey<Item> modTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(AmethystTech.MODID, name));
