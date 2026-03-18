@@ -20,6 +20,17 @@ public class EchoAxeItem extends AxeItem implements EchoItem {
     }
 
     @Override
+    public void update(ItemStack stack, boolean oldEnableState) {
+        boolean shouldEnable = getXpCharge(stack) > 0;
+
+        // 只在状态真正变化时才更新属性组件
+        if (shouldEnable != oldEnableState) {
+            setDamageAttributeModifier(stack, shouldEnable);
+            setMineEfficiencyAttributeModifier(stack, shouldEnable);
+        }
+    }
+
+    @Override
     public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
         this.xpChargeHoverText(stack, tooltipComponents);
     }

@@ -1,7 +1,6 @@
 package me.cyanhana.amethyst_tech.item.tools.echoTools;
 
 import me.cyanhana.amethyst_tech.util.ModToolTiers;
-import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.entity.LivingEntity;
@@ -18,6 +17,17 @@ public class EchoPickaxeItem extends PickaxeItem implements EchoItem {
     public EchoPickaxeItem() {
         super(ModToolTiers.ECHO, new Properties()
                 .attributes(PickaxeItem.createAttributes(ModToolTiers.ECHO, 1.0F, -2.8F)));
+    }
+
+    @Override
+    public void update(ItemStack stack, boolean oldEnableState) {
+        boolean shouldEnable = getXpCharge(stack) > 0;
+
+        // 只在状态真正变化时才更新属性组件
+        if (shouldEnable != oldEnableState) {
+            setDamageAttributeModifier(stack, shouldEnable);
+            setMineEfficiencyAttributeModifier(stack, shouldEnable);
+        }
     }
 
     @Override

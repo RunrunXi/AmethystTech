@@ -23,7 +23,7 @@ public class XpChargeBarDecorator implements IItemDecorator {
         int barHeight = stack.isDamaged()? 1 : 0;
         int barX = x + 2;
         int barY = y + 13 + barHeight;
-        if (EchoItem.isChargeBarVisible) {
+        if (echoItem.getXpCharge(stack) > 0) {
             // 背景
             guiGraphics.fill(barX, barY, barX + barWidth, barY + (stack.isDamaged()? 0 : 2), -16777216);
             // 充能条

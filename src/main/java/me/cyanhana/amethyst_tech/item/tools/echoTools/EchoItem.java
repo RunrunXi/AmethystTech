@@ -4,12 +4,14 @@ import me.cyanhana.amethyst_tech.AmethystTech;
 import me.cyanhana.amethyst_tech.util.ModDataComponents;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.ItemStack;
@@ -26,20 +28,23 @@ public interface EchoItem {
             ResourceLocation.fromNamespaceAndPath(AmethystTech.MODID, "echo_item_charge_damage");
     ResourceLocation CHARGE_MINE_EFFICIENCY_MODIFIER_ID =
             ResourceLocation.fromNamespaceAndPath(AmethystTech.MODID, "echo_item_charge_mine_efficiency");
+    ResourceLocation CHARGE_ATTACK_SPEED_MODIFIER_ID =
+            ResourceLocation.fromNamespaceAndPath(AmethystTech.MODID, "echo_item_charge_attack_speed");
     // 加成值
     float CHARGE_DAMAGE_BONUS = 1.0F;
-    float CHARGE_EFFICIENCY_BONUS = 10.0F;
+    float CHARGE_EFFICIENCY_BONUS = 55.0F;
+    float CHARGE_ATTACK_SPEED_BONUS = 0.5F;
     // 充能条
     int MAX_CHARGE = 500;
-    boolean isChargeBarVisible = true;
 
     default int getXpCharge(ItemStack stack) {
         return stack.getOrDefault(ModDataComponents.XP_CHARGE, 0);
     }
     default void setXpCharge(ItemStack stack, int value) {
+        boolean oldEnableState = getXpCharge(stack) > 0;
         int clampedCharge = Math.clamp(value, 0, MAX_CHARGE);
         stack.set(ModDataComponents.XP_CHARGE, clampedCharge);
-        update(stack);
+        update(stack, oldEnableState);
     }
     default void consumeXpCharge(ItemStack stack) {
         setXpCharge(stack, getXpCharge(stack) - 1);
@@ -61,55 +66,76 @@ public interface EchoItem {
                 .append(Component.literal(String.valueOf(MAX_CHARGE)).withStyle(ChatFormatting.GREEN))
         );
     }
-    // 更新物品状态
-    default void update(ItemStack stack) {
-        // 有充能时加成属性
-        enableAttributeModifier(stack, getXpCharge(stack) > 0);
+    // 更新方法
+    default void update(ItemStack stack, boolean oldEnableState) {
+
     }
-    // 检查物品是否有匹配的组件
-    private boolean hasAttributeModifier(ItemStack stack) {
-        return stack.getOrDefault(DataComponents.ATTRIBUTE_MODIFIERS,
-                        ItemAttributeModifiers.EMPTY)
-                .modifiers().stream()
-                .anyMatch(entry -> entry.modifier().id().equals(CHARGE_DAMAGE_MODIFIER_ID));
+    // 添加伤害修饰符
+    default void setDamageAttributeModifier(ItemStack stack, boolean isEnable) {
+        AttributeModifier modifier = new AttributeModifier(
+                CHARGE_DAMAGE_MODIFIER_ID,
+                CHARGE_DAMAGE_BONUS,
+                AttributeModifier.Operation.ADD_VALUE
+        );
+        setAttributeModifier(stack, Attributes.ATTACK_DAMAGE, modifier, EquipmentSlotGroup.MAINHAND, isEnable);
     }
-    default void enableAttributeModifier(ItemStack stack, boolean isEnable) {
-        // 如果状态没有变化，提前返回，避免不必要的操作
-        if (hasAttributeModifier(stack) == isEnable) {
-            return;
-        }
+    // 添加挖掘效率修饰符
+    default void setMineEfficiencyAttributeModifier(ItemStack stack, boolean isEnable) {
+        AttributeModifier modifier = new AttributeModifier(
+                CHARGE_MINE_EFFICIENCY_MODIFIER_ID,
+                CHARGE_EFFICIENCY_BONUS,
+                AttributeModifier.Operation.ADD_VALUE
+        );
+        setAttributeModifier(stack, Attributes.MINING_EFFICIENCY, modifier, EquipmentSlotGroup.MAINHAND, isEnable);
+    }
+    // 添加攻击速度修饰符
+    default void setAttackSpeedAttributeModifier(ItemStack stack, boolean isEnable) {
+        AttributeModifier modifier = new AttributeModifier(
+                CHARGE_ATTACK_SPEED_MODIFIER_ID,
+                CHARGE_ATTACK_SPEED_BONUS,
+                AttributeModifier.Operation.ADD_VALUE
+        );
+        setAttributeModifier(stack, Attributes.ATTACK_SPEED, modifier, EquipmentSlotGroup.MAINHAND, isEnable);
+    }
+
+    /**
+     * 设置工具的的属性修饰符
+     *
+     * @param stack 要修改的物品堆
+     * @param attributes 要修改的属性
+     * @param modifier 要设置的修饰符
+     * @param slot 生效的装备槽位
+     * @param isEnable true=添加修饰符，false=移除修饰符
+     */
+    default void setAttributeModifier(
+            ItemStack stack, Holder<Attribute> attributes, AttributeModifier modifier, EquipmentSlotGroup slot, boolean isEnable
+    ) {
         // 获取当前的修饰符组件
         ItemAttributeModifiers currentModifiers =
                 stack.getOrDefault(DataComponents.ATTRIBUTE_MODIFIERS, stack.getItem().getDefaultAttributeModifiers(stack));
+        // 检查物品是否有匹配的组件
+        boolean hasModifier = currentModifiers.modifiers().stream()
+                .anyMatch(entry -> entry.modifier().id().equals(modifier.id()));
+        // 如果状态没有变化，提前返回，避免不必要的操作
+        if (hasModifier == isEnable) {
+            return;
+        }
         // 创建新的修饰符构建器
         ItemAttributeModifiers.Builder builder = ItemAttributeModifiers.builder();
         currentModifiers.modifiers().forEach(entry -> {
-            // 可以添加过滤逻辑，避免重复添加同ID的修饰符
-            if (!entry.modifier().id().equals(CHARGE_DAMAGE_MODIFIER_ID)
-                    && !entry.modifier().id().equals(CHARGE_MINE_EFFICIENCY_MODIFIER_ID)) {
+            // 过滤掉已有的修饰符, 如果需要加成才重新添加
+            if (!entry.modifier().id().equals(modifier.id())) {
                 builder.add(entry.attribute(), entry.modifier(), entry.slot());
             }
         });
         if (isEnable) {
             // 添加新的修饰符
-            builder.add(
-                    Attributes.ATTACK_DAMAGE,
-                    new AttributeModifier(
-                            CHARGE_DAMAGE_MODIFIER_ID,
-                            CHARGE_DAMAGE_BONUS,
-                            AttributeModifier.Operation.ADD_VALUE),
-                    EquipmentSlotGroup.MAINHAND);
-            builder.add(
-                    Attributes.MINING_EFFICIENCY,
-                    new AttributeModifier(
-                            CHARGE_MINE_EFFICIENCY_MODIFIER_ID,
-                            CHARGE_EFFICIENCY_BONUS,
-                            AttributeModifier.Operation.ADD_VALUE),
-                    EquipmentSlotGroup.MAINHAND);
+            builder.add(attributes, modifier, slot);
         }
         // 设置更新后的修饰符组件
         stack.set(DataComponents.ATTRIBUTE_MODIFIERS, builder.build());
     }
+
     // 攻击后减少充能
     default void itemPostHurtEnemy(ItemStack stack, LivingEntity target, LivingEntity attacker, int amount) {
         if (!hasXpCharge(stack)) {

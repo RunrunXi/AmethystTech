@@ -16,9 +16,9 @@ public class ModToolTiers {
             190, 6F, 3F, 22,
             () -> Ingredient.of(Blocks.AMETHYST_BLOCK));
     // 回响工具
-    // 工具特性: 钻石的属性, 钻石和铁之间的耐久, 下界合金的伤害
+    // 工具特性: 钻石和铁之间的耐久, 下界合金的数值, 钻石的附魔能力
     public static final Tier ECHO = new SimpleTier(
             BlockTags.INCORRECT_FOR_DIAMOND_TOOL,
-            905, 8F, 4F, 10,
+            905, 9F, 4F, 10,
             () -> Ingredient.of(Items.ECHO_SHARD));
 }

@@ -31,11 +31,6 @@ public class EchoBowItem extends BaseBowItem implements EchoItem, IModBow {
     }
 
     @Override
-    public void update(ItemStack stack) {
-
-    }
-
-    @Override
     public double getDrawSpeedMulti(ItemStack stack) {
         return DRAW_SPEED_MULTI + (hasXpCharge(stack) ? 0.2 : 0);
     }
