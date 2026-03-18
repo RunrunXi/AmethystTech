@@ -54,7 +54,14 @@ public class ModCreativeModeTabs {
     }
     // 添加创造模式标签页的方块
     private static void addBlocksToTab(CreativeModeTab.Output output) {
+        // 回响块
         output.accept(ModBlocks.ECHO_BLOCK);
+        // 回响母岩与簇
+        output.accept(ModBlocks.BUDDING_ECHO);
+        output.accept(ModBlocks.SMALL_ECHO_BUD);
+        output.accept(ModBlocks.MEDIUM_ECHO_BUD);
+        output.accept(ModBlocks.LARGE_ECHO_BUD);
+        output.accept(ModBlocks.ECHO_CLUSTER);
     }
 
     public static void register(IEventBus eventBus) {

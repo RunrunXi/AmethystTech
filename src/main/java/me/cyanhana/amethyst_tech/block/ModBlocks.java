@@ -1,13 +1,14 @@
 package me.cyanhana.amethyst_tech.block;
+
 import me.cyanhana.amethyst_tech.AmethystTech;
 import me.cyanhana.amethyst_tech.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.AmethystBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -29,12 +30,64 @@ public class ModBlocks {
 //            CoralBlock_sample::new);
     // 回响块
     public static final DeferredBlock<Block> ECHO_BLOCK = registerBlock("echo_block",
-            () -> new AmethystBlock(BlockBehaviour.Properties.of()
+            () -> new EchoBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_BLACK)
                     .strength(1.5F)
                     .sound(SoundType.AMETHYST)
                     .requiresCorrectToolForDrops()
-            ));
+            )
+    );
+    public static final DeferredBlock<Block> BUDDING_ECHO = registerBlock("budding_echo",
+            () -> new BuddingEchoBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BLACK)
+                    .randomTicks()
+                    .strength(1.5F)
+                    .sound(SoundType.AMETHYST)
+                    .requiresCorrectToolForDrops()
+                    .pushReaction(PushReaction.DESTROY)
+            )
+    );
+    public static final DeferredBlock<Block> ECHO_CLUSTER = registerBlock("echo_cluster",
+            () -> new EchoClusterBlock(
+                    7.0F,
+                    3.0F,
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.COLOR_BLACK)
+                            .forceSolidOn()
+                            .noOcclusion()
+                            .sound(SoundType.AMETHYST_CLUSTER)
+                            .strength(1.5F)
+                            .lightLevel(l -> 5)
+                            .pushReaction(PushReaction.DESTROY)
+            )
+    );
+    public static final DeferredBlock<Block> LARGE_ECHO_BUD = registerBlock("large_echo_bud",
+            () -> new EchoClusterBlock(
+                    5.0F,
+                    3.0F,
+                    BlockBehaviour.Properties.ofFullCopy(ECHO_CLUSTER.get())
+                            .sound(SoundType.MEDIUM_AMETHYST_BUD)
+                            .lightLevel(l -> 4)
+            )
+    );
+    public static final DeferredBlock<Block> MEDIUM_ECHO_BUD = registerBlock("medium_echo_bud",
+            () -> new EchoClusterBlock(
+                    4.0F,
+                    3.0F,
+                    BlockBehaviour.Properties.ofFullCopy(ECHO_CLUSTER.get())
+                            .sound(SoundType.LARGE_AMETHYST_BUD)
+                            .lightLevel(l -> 2)
+            )
+    );
+    public static final DeferredBlock<Block> SMALL_ECHO_BUD = registerBlock("small_echo_bud",
+            () -> new EchoClusterBlock(
+                    3.0F,
+                    4.0F,
+                    BlockBehaviour.Properties.ofFullCopy(ECHO_CLUSTER.get())
+                            .sound(SoundType.SMALL_AMETHYST_BUD)
+                            .lightLevel(l -> 1)
+            )
+    );
 
     // 注册方块(自动注册方块物品)
     private static <T extends Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
