@@ -28,5 +28,5 @@
   "gui.amethyst_tech.tooltip.xp_charge": "经验充能:",
   "gui.amethyst_tech.tooltip.bow_draw_speed_multi": " 拉弓速度",
   "gui.amethyst_tech.tooltip.bow_bonus_damage": " 箭矢伤害",
-  "gui.amethyst_tech.tooltip.amethyst_tool_tooltip": "紫水晶会随时间修复自身"
+  "gui.amethyst_tech.tooltip.amethyst_tool_tooltip": "紫水晶工具会随时间修复自身"
 }
