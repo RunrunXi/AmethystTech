@@ -16,6 +16,7 @@
   "item.amethyst_tech.iron_plate": "Iron Plate",
   "item.amethyst_tech.copper_plate": "Copper Plate",
   "item.amethyst_tech.gold_plate": "Gold Plate",
+  "item.amethyst_tech.copper_wire": "Copper Wire",
   "item.amethyst_tech.echo_upgrade_smithing_template": "Smithing Template",
   "item.amethyst_tech.smithing_template.echo_upgrade.applies_to": "Amethyst Weapon or Tools",
   "item.amethyst_tech.smithing_template.echo_upgrade.ingredients": "Echo Block",

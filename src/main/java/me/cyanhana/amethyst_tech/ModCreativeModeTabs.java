@@ -51,6 +51,7 @@ public class ModCreativeModeTabs {
         output.accept(ModItems.IRON_PLATE);
         output.accept(ModItems.COPPER_PLATE);
         output.accept(ModItems.GOLD_PLATE);
+        output.accept(ModItems.COPPER_WIRE);
     }
     // 添加创造模式标签页的方块
     private static void addBlocksToTab(CreativeModeTab.Output output) {

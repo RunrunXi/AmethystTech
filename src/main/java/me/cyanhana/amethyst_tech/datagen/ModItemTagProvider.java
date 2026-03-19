@@ -47,7 +47,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.ECHO_BOW.get());
         tag(ItemTags.DURABILITY_ENCHANTABLE)
                 .add(ModItems.AMETHYST_BOW.get())
-                .add(ModItems.ECHO_BOW.get());
+                .add(ModItems.ECHO_BOW.get())
+                .add(ModItems.AMETHYST_CUTTING_KNIFE.get());
         tag(ItemTags.BOW_ENCHANTABLE)
                 .add(ModItems.AMETHYST_BOW.get())
                 .add(ModItems.ECHO_BOW.get());
@@ -59,9 +60,12 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.IRON_PLATE.get())
                 .add(ModItems.GOLD_PLATE.get())
                 .add(ModItems.COPPER_PLATE.get());
-        tag(ModTags.Items.IRON_PLATES).add(ModItems.IRON_PLATE.get());
-        tag(ModTags.Items.GOLD_PLATES).add(ModItems.GOLD_PLATE.get());
-        tag(ModTags.Items.COPPER_PLATES).add(ModItems.COPPER_PLATE.get());
+        tag(ModTags.Items.IRON_PLATE).add(ModItems.IRON_PLATE.get());
+        tag(ModTags.Items.GOLD_PLATE).add(ModItems.GOLD_PLATE.get());
+        tag(ModTags.Items.COPPER_PLATE).add(ModItems.COPPER_PLATE.get());
+        // 线
+        tag(ModTags.Items.WIRES).add(ModItems.COPPER_WIRE.get());
+        tag(ModTags.Items.COPPER_WIRE).add(ModItems.COPPER_WIRE.get());
 
         tag(ItemTags.CLUSTER_MAX_HARVESTABLES)
                 .add(ModItems.AMETHYST_PICKAXE.get())

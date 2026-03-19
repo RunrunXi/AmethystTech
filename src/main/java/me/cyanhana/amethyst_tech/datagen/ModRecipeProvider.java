@@ -136,15 +136,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .save(recipeOutput, AmethystTech.MODID + ":" + "amethyst_shard_from_block");
         // 金属块
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.IRON_BLOCK, 1)
-                .requires(Ingredient.of(ModTags.Items.IRON_PLATES), 9)
+                .requires(Ingredient.of(ModTags.Items.IRON_PLATE), 9)
                 .unlockedBy("has_iron_plate", has(ModItems.IRON_PLATE))
                 .save(recipeOutput, AmethystTech.MODID + ":" + "iron_block_from_plate");
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.GOLD_BLOCK, 1)
-                .requires(Ingredient.of(ModTags.Items.GOLD_PLATES), 9)
+                .requires(Ingredient.of(ModTags.Items.GOLD_PLATE), 9)
                 .unlockedBy("has_gold_plate", has(ModItems.GOLD_PLATE))
                 .save(recipeOutput, AmethystTech.MODID + ":" + "gold_block_from_plate");
         ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, Blocks.COPPER_BLOCK, 1)
-                .requires(Ingredient.of(ModTags.Items.COPPER_PLATES), 9)
+                .requires(Ingredient.of(ModTags.Items.COPPER_PLATE), 9)
                 .unlockedBy("has_copper_plate", has(ModItems.COPPER_PLATE))
                 .save(recipeOutput, AmethystTech.MODID + ":" + "copper_block_from_plate");
     }
@@ -166,6 +166,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(Blocks.GOLD_BLOCK)
                 .unlockedBy("has_cutting_knife", has(ModTags.Items.CUTTING_KNIVES))
                 .save(recipeOutput, AmethystTech.MODID + ":" + "gold_plate_from_block");
+        CuttingRecipeBuilder.cutting(RecipeCategory.MISC, ModItems.COPPER_WIRE, 2)
+                .requires(ModTags.Items.CUTTING_KNIVES)
+                .requires(ModTags.Items.COPPER_PLATE)
+                .unlockedBy("has_copper_plate", has(ModTags.Items.COPPER_PLATE))
+                .save(recipeOutput);
     }
 
     // 锻造配方

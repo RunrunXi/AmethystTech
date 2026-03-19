@@ -15,10 +15,13 @@ public class ModTags {
         public static final TagKey<Item> CUTTING_KNIVES = modTag("cutting_knives");
         // 通用标签
         public static final TagKey<Item> PLATES = commonTag("plates");
+        public static final TagKey<Item> WIRES = commonTag("wires");
         // 板
-        public static final TagKey<Item> IRON_PLATES = commonTag("plates/iron");
-        public static final TagKey<Item> GOLD_PLATES = commonTag("plates/gold");
-        public static final TagKey<Item> COPPER_PLATES = commonTag("plates/copper");
+        public static final TagKey<Item> IRON_PLATE = commonTag("plates/iron");
+        public static final TagKey<Item> GOLD_PLATE = commonTag("plates/gold");
+        public static final TagKey<Item> COPPER_PLATE = commonTag("plates/copper");
+        // 线
+        public static final TagKey<Item> COPPER_WIRE = commonTag("wires/copper");
 
         private static TagKey<Item> modTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(AmethystTech.MODID, name));

@@ -34,7 +34,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.IRON_PLATE.get());
         basicItem(ModItems.COPPER_PLATE.get());
         basicItem(ModItems.GOLD_PLATE.get());
-
+        // 线
+        basicItem(ModItems.COPPER_WIRE.get());
     }
 
     private ResourceLocation blockItem(String name) {
