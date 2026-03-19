@@ -33,5 +33,6 @@
   "gui.amethyst_tech.tooltip.xp_charge": "XP Charge:",
   "gui.amethyst_tech.tooltip.bow_draw_speed_multi": " Draw Speed",
   "gui.amethyst_tech.tooltip.bow_bonus_damage": " Arrow Damage",
-  "gui.amethyst_tech.tooltip.amethyst_tool_tooltip": "Amethyst tool will repairs self by time"
+  "gui.amethyst_tech.tooltip.amethyst_tool_tooltip": "Amethyst tool will repairs self by time",
+  "gui.amethyst_tech.tooltip.cutting_knife_tooltip": "Use [Shift + Right Click] to remove budding"
 }
