@@ -1,6 +1,5 @@
 package me.cyanhana.amethyst_tech.item.tools.amethystTools;
 
-import me.cyanhana.amethyst_tech.block.BuddingEchoBlock;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -18,9 +17,9 @@ import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.BuddingAmethystBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.event.level.BlockEvent;
 
 import java.util.List;
@@ -65,16 +64,15 @@ public class AmethystCuttingKnifeItem extends Item {
         // 获取方块
         BlockState state = context.getLevel().getBlockState(context.getClickedPos());
         Block block = state.getBlock();
-        ItemStack itemInHand = context.getItemInHand();
         // 判断是否是母岩
-        if (block instanceof BuddingEchoBlock || block instanceof BuddingAmethystBlock) {
+        if (state.is(Tags.Blocks.BUDDING_BLOCKS)) {
             // 如果是生存模式才消耗耐久
             if (player.isShiftKeyDown()) {
                 if (!player.isCreative()) {
                     player.getInventory().placeItemBackInInventory(new ItemStack(block));
                     context.getItemInHand().hurtAndBreak(1, player, EquipmentSlot.MAINHAND);
                 }
-                level.destroyBlock(pos, true);
+                level.destroyBlock(pos, false);
                 return InteractionResult.SUCCESS;
             }
         }

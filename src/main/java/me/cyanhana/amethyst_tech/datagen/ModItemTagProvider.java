@@ -1,6 +1,7 @@
 package me.cyanhana.amethyst_tech.datagen;
 
 import me.cyanhana.amethyst_tech.AmethystTech;
+import me.cyanhana.amethyst_tech.block.ModBlocks;
 import me.cyanhana.amethyst_tech.item.ModItems;
 import me.cyanhana.amethyst_tech.util.ModTags;
 import net.minecraft.core.HolderLookup;
@@ -65,5 +66,12 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ItemTags.CLUSTER_MAX_HARVESTABLES)
                 .add(ModItems.AMETHYST_PICKAXE.get())
                 .add(ModItems.ECHO_PICKAXE.get());
+        // 母岩
+        tag(Tags.Items.BUDDING_BLOCKS)
+                .add(ModBlocks.BUDDING_ECHO.asItem());
+        tag(Tags.Items.BUDS)
+                .add(ModBlocks.SMALL_ECHO_BUD.asItem())
+                .add(ModBlocks.MEDIUM_ECHO_BUD.asItem())
+                .add(ModBlocks.LARGE_ECHO_BUD.asItem());
     }
 }

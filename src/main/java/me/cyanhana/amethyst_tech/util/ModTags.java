@@ -9,7 +9,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 
 public class ModTags {
-    public class Items {
+    public static class Items {
         // 紫晶科技
         // 切割刀
         public static final TagKey<Item> CUTTING_KNIVES = modTag("cutting_knives");
@@ -27,11 +27,13 @@ public class ModTags {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath("c", name));
         }
     }
-    public class Blocks {
+    public static class Blocks {
 
-
-        private static TagKey<Block> createTagKey(String name) {
+        private static TagKey<Block> modTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(AmethystTech.MODID, name));
+        }
+        private static TagKey<Block> commonTag(String name) {
+            return BlockTags.create(ResourceLocation.fromNamespaceAndPath("c", name));
         }
     }
 }
