@@ -16,12 +16,17 @@ public class ModTags {
         // 通用标签
         public static final TagKey<Item> PLATES = commonTag("plates");
         public static final TagKey<Item> WIRES = commonTag("wires");
+        public static final TagKey<Item> COILS = modTag("coils");
         // 板
         public static final TagKey<Item> IRON_PLATE = commonTag("plates/iron");
         public static final TagKey<Item> GOLD_PLATE = commonTag("plates/gold");
         public static final TagKey<Item> COPPER_PLATE = commonTag("plates/copper");
         // 线
         public static final TagKey<Item> COPPER_WIRE = commonTag("wires/copper");
+        public static final TagKey<Item> GOLD_WIRE = commonTag("wires/gold");
+        // 线圈
+        public static final TagKey<Item> LV_COIL = modTag("coils/lv");
+        public static final TagKey<Item> MV_COIL = modTag("coils/mv");
 
         private static TagKey<Item> modTag(String name) {
             return ItemTags.create(ResourceLocation.fromNamespaceAndPath(AmethystTech.MODID, name));

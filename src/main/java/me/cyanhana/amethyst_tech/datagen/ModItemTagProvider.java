@@ -64,8 +64,21 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ModTags.Items.GOLD_PLATE).add(ModItems.GOLD_PLATE.get());
         tag(ModTags.Items.COPPER_PLATE).add(ModItems.COPPER_PLATE.get());
         // 线
-        tag(ModTags.Items.WIRES).add(ModItems.COPPER_WIRE.get());
-        tag(ModTags.Items.COPPER_WIRE).add(ModItems.COPPER_WIRE.get());
+        tag(ModTags.Items.WIRES)
+                .add(ModItems.COPPER_WIRE.get())
+                .add(ModItems.GOLD_WIRE.get());
+        tag(ModTags.Items.COPPER_WIRE)
+                .add(ModItems.COPPER_WIRE.get());
+        tag(ModTags.Items.GOLD_WIRE)
+                .add(ModItems.GOLD_WIRE.get());
+        // 线圈
+        tag(ModTags.Items.COILS)
+                .add(ModItems.LV_RESONANT_COIL.get())
+                .add(ModItems.MV_RESONANT_COIL.get());
+        tag(ModTags.Items.LV_COIL)
+                .add(ModItems.LV_RESONANT_COIL.get());
+        tag(ModTags.Items.MV_COIL)
+                .add(ModItems.MV_RESONANT_COIL.get());
 
         tag(ItemTags.CLUSTER_MAX_HARVESTABLES)
                 .add(ModItems.AMETHYST_PICKAXE.get())

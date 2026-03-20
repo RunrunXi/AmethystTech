@@ -36,6 +36,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.GOLD_PLATE.get());
         // 线
         basicItem(ModItems.COPPER_WIRE.get());
+        basicItem(ModItems.GOLD_WIRE.get());
+        // 线圈
+        basicItem(ModItems.LV_RESONANT_COIL.get());
+        basicItem(ModItems.MV_RESONANT_COIL.get());
     }
 
     private ResourceLocation blockItem(String name) {

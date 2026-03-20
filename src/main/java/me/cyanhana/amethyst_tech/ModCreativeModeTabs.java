@@ -51,7 +51,12 @@ public class ModCreativeModeTabs {
         output.accept(ModItems.IRON_PLATE);
         output.accept(ModItems.COPPER_PLATE);
         output.accept(ModItems.GOLD_PLATE);
+        // 线缆
         output.accept(ModItems.COPPER_WIRE);
+        output.accept(ModItems.GOLD_WIRE);
+        // 线圈
+        output.accept(ModItems.LV_RESONANT_COIL);
+        output.accept(ModItems.MV_RESONANT_COIL);
     }
     // 添加创造模式标签页的方块
     private static void addBlocksToTab(CreativeModeTab.Output output) {

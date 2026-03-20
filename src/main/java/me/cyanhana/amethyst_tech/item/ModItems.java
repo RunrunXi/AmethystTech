@@ -44,6 +44,10 @@ public class ModItems {
     public static final DeferredItem<Item> GOLD_PLATE = ITEMS.register("gold_plate", () -> new Item(new Item.Properties()));
     // 线
     public static final DeferredItem<Item> COPPER_WIRE = ITEMS.register("copper_wire", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> GOLD_WIRE = ITEMS.register("gold_wire", () -> new Item(new Item.Properties()));
+    // 线圈
+    public static final DeferredItem<Item> LV_RESONANT_COIL = ITEMS.register("lv_resonant_coil", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> MV_RESONANT_COIL = ITEMS.register("mv_resonant_coil", () -> new Item(new Item.Properties()));
     // 注册到总线
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

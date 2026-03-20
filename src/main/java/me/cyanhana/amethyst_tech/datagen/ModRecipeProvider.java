@@ -120,6 +120,23 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .define('S', Items.STRING)
                 .unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD))
                 .save(recipeOutput);
+        // 线圈
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.LV_RESONANT_COIL)
+                .pattern(" W ")
+                .pattern("WAW")
+                .pattern(" W ")
+                .define('A', Items.AMETHYST_SHARD)
+                .define('W', ModTags.Items.COPPER_WIRE)
+                .unlockedBy("has_copper_wire", has(ModTags.Items.COPPER_WIRE))
+                .save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.MV_RESONANT_COIL)
+                .pattern(" W ")
+                .pattern("WAW")
+                .pattern(" W ")
+                .define('A', Items.AMETHYST_SHARD)
+                .define('W', ModTags.Items.GOLD_WIRE)
+                .unlockedBy("has_gold_wire", has(ModTags.Items.GOLD_WIRE))
+                .save(recipeOutput);
     }
 
     // 无序配方
@@ -170,6 +187,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModTags.Items.CUTTING_KNIVES)
                 .requires(ModTags.Items.COPPER_PLATE)
                 .unlockedBy("has_copper_plate", has(ModTags.Items.COPPER_PLATE))
+                .save(recipeOutput);
+        CuttingRecipeBuilder.cutting(RecipeCategory.MISC, ModItems.GOLD_WIRE, 2)
+                .requires(ModTags.Items.CUTTING_KNIVES)
+                .requires(ModTags.Items.GOLD_PLATE)
+                .unlockedBy("has_gold_plate", has(ModTags.Items.GOLD_PLATE))
                 .save(recipeOutput);
     }
 
